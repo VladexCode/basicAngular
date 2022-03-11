@@ -1,1 +1,98 @@
-<p>persona works!</p>
+<div>
+    <h2>Interpolacion de variables</h2>
+    <p> las variables pueden ser publicas o privadas</p>
+    <p>
+        Nombre: {{ nombre }}
+        Numero: {{ getNumero() + 1}}
+    </p>
+</div>
+<hr>
+
+<div (keyup)="0">
+    <h2>Template reference Variable</h2>
+    <br>
+    <input #entrada />{{ entrada.value }}
+    <br>
+</div>
+<hr>
+
+<div>
+    <h2>Property binding asignamos valores a las propiedades html </h2>
+    <p>la propiedad requiere estar entre corchete[] e igualar con el atributo de la clase</p>
+    <button class="btn btn-primary" [disabled]="desabilitarBoton">agregar</button>
+</div>
+<hr>
+
+<div>
+    <h2>Event Binding</h2>
+    <p>es un handler de los eventos y se lo agreega entre parentesis</p>
+    <button class="btn btn-primary" (click)=agregarPersona()>agregar Persona</button>
+    <h3>{{ mensajeEventBinding }}</h3>
+
+    <label>Titulo de persona</label>
+    <input type="text" class="form-control" (input)='modificarTitulo($event)'>
+
+    {{tituloEvent}}
+</div>
+<hr>
+
+<div>
+    <h2>Two way Binding</h2>
+    <p>trabaja con formularios de angular</p>
+    <br>
+    <p>importamos FormsModule en app.module.ts para utilizar twoWB, se utliza Property Binding y Event Binding, no se
+        declara un metodo en la clase </p>
+    <label>Titulo persona</label>
+    <input type="text" class="form-control" [(ngModel)]='tituloTwoWayBinding'>{{ tituloTwoWayBinding}}
+</div>
+<hr>
+
+<div>
+    <h2>Calculadora</h2>
+    <input type="number" class="form-control" [(ngModel)]='numeroA'>
+    <input type="number" class="form-control" [(ngModel)]='numeroB'>
+    <button class="btn btn-success" (click)='sumar()'></button>
+    <p>{{ resultado }}</p>
+</div>
+
+<hr>
+<div>
+    <h2>NGIF</h2>
+    <p *ngIf='mostrar ; else siesflaso'>{{ mostrar }}</p>
+    <ng-template #siesflaso>
+        <p>no hay nada que mostrar</p>
+    </ng-template>
+</div>
+
+<hr>
+<div>
+    <h2>NGFOR</h2>
+    <div>
+        <input [(ngModel)]="nombreIn">
+
+        <input [(ngModel)]="apellidoIn">
+        <button class="btn btn-danger" (click)="agregarListaPersona()">agregar</button>
+    </div>
+
+    <div *ngFor='let per of personas; let i = index'>
+        <ul>
+            <li>{{ i }} nombre {{ per.nombre }} apelido {{ per.apellido}}</li>
+        </ul>
+    </div>
+</div>
+<hr>
+
+<div>
+    <h2>Referencias Locales</h2>
+    <input #IndatoRL>
+    <button (click)="enviarReferenciaLocal(IndatoRL)">Enviar Referencia Local</button>
+    <p>{{ datoRL }}</p>
+</div>
+
+<hr>
+<div>
+    <h2>ViewChild y LocalReference</h2>
+    <input #IndatoVC>
+    <button (click)="mostraViewChild()">Enviar Referencia Local</button>
+    <p>{{ mostraVC }}</p>
+</div>
