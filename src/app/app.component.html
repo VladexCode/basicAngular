@@ -1,14 +1,56 @@
-<!--<app-personas></app-personas>
-<hr>
-<hr>
- <app-primerhijo
- (enviarPersona)="CrearPersona($event)"
- ></app-primerhijo>
+<div class="container">
+    <div class="p-3 mb-2 bg-info text-white text-center">
+        <h1>Lista de Componentes basicos</h1>
+    </div>
 
- <app-segundohijo
- [RecibidoDesdePadre]="personas"
- ></app-segundohijo>-->
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+        <li class="nav-item"><a class="nav-link" [routerLink]="['']">Home   | </a></li>
+        <li class="nav-item"><a class="nav-link"
+                [routerLink]="['/interpolacion']">Interpolacion   | </a></li>
+        <li class="nav-item"><a class="nav-link"
+                [routerLink]="['/templateReference']">Templatee Reference   | </a></li>
+        <li class="nav-item"><a class="nav-link"
+                [routerLink]="['/propertyBinding']">Property Binding   | </a></li>
+        <li class="nav-item"><a class="nav-link"
+                [routerLink]="['/eventBinding']">Event Binding   | </a></li>
+        <li class="nav-item"><a class="nav-link"
+                [routerLink]="['/twoWayBinding']">Two Way Binding   | </a></li>
+        <li class="nav-item"><a class="nav-link"
+                [routerLink]="['/calculadoraEEjemplo']">CalculadoraEjemplo   |
+            </a></li>
+        <li class="nav-item"><a class="nav-link" [routerLink]="['/directivas']">Directivas
+                | </a></li>
+        <li class="nav-item"><a class="nav-link"
+                [routerLink]="['/referenciaLocal']">ReferenciaLocal   | </a></li>
+        <li class="nav-item"><a class="nav-link" [routerLink]="['/viewChild']">viewChild
+                | </a></li>
+        <li class="nav-item"><a class="nav-link" [routerLink]="['/rutas']">Rutas
+                | </a></li>
+        <li class="nav-item"><a class="nav-link"
+                [routerLink]="['/ngformulario']"> Formulario ngForm   | </a></li>
+        <li class="nav-item"><a class="nav-link" [routerLink]="['/servicio']">
+                Servicio | </a></li>
+        <li class="nav-item"><a class="nav-link" [routerLink]="['/primerHijo']">
+                PrimerHijo | </a></li>
+        <li class="nav-item"><a class="nav-link"
+                [routerLink]="['/segundoHijo']"> SegundoHijo   | </a></li>
 
- <app-consumir-servicio>
+    </ul>
 
- </app-consumir-servicio>
+
+    <div class="row">
+        <div class="col-6">
+            <app-primerhijo (enviarPersona)="CrearPersona($event)">
+            </app-primerhijo>
+
+            <app-segundohijo [RecibidoDesdePadre]="personas">
+            </app-segundohijo>
+        </div>
+
+        <div class="col-6">
+            <app-primerhijo-servicio></app-primerhijo-servicio>
+            <app-segundohijo-servicio></app-segundohijo-servicio>
+        </div>
+    </div>
+    <router-outlet></router-outlet>
+</div>

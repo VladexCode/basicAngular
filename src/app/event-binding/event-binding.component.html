@@ -1,0 +1,16 @@
+<hr>
+<div>
+    <h2>Event Binding</h2>
+    <p class="text-center">Es un handler de los eventos y se lo agrega entre parentesis</p>
+    <div class="row">
+        <div class="col-6">
+            <button class="btn btn-primary" (click)=agregarPersona()>agregar Persona</button>
+            <h3>{{ mensajeEventBinding }}</h3>
+        </div>
+        <div class="col-6">
+            <label>Titulo de persona</label>
+            <input type="text" class="form-control" (input)='modificarTitulo($event)'>
+            {{tituloEvent}}
+        </div>
+    </div>
+</div>

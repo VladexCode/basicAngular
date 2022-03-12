@@ -1,16 +1,13 @@
 <p>consumir-servicio works!</p>
+<hr>
 <p>los servicios tienen jerarquia </p>
 <div>
     <input type="text" [(ngModel)]="InputNombre">
-
     <input type="text" [(ngModel)]="InputApellido">
-
     <button class="btn btn-warning" (click)="agregarPersonaAlServicio()">enviar a servicio</button>
-
     <div *ngFor="let pe of PersonaEnComponente">
         <ul>
             <li>{{ pe.nombre}}</li>
         </ul>
-
     </div>
 </div>

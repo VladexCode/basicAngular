@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Output, EventEmitter } from '@angular/core';
+
 import { Persona } from './persona/persona.model';
 
 @Injectable({
@@ -10,6 +11,9 @@ export class ServiciosService {
     new Persona('vladi2', 'fernd2'),
     new Persona('braya2', 'rondo2'),
   ];
+  @Output() saludar: EventEmitter<any> = new EventEmitter();
+  //saludar=new EventEmitter<number>();
+
   constructor(/*podemos llamar otro servicio */) {}
 
   nuevaPersonaDesdeServicio(nueevaPersona: Persona) {

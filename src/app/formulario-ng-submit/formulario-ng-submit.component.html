@@ -1,0 +1,10 @@
+<hr>
+<div>
+    <h2>Formulario ngSubmit</h2>
+    <form class="item" #f="ngForm" (ngSubmit)="f.form.valid && MetodoGuardar()">
+        <input type="text" name="nombre" id="nombre" [(ngModel)]="guardarform" required>
+        <button class="btn btn-success" type="submit">Guardar</button>
+    </form>
+    <p>{{guardarform}}</p>
+</div>
+

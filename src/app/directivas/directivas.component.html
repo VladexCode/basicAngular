@@ -1,0 +1,26 @@
+<hr>
+<div>
+    <h2>NGIF</h2>
+    <p *ngIf='mostrar ; else siesflaso'>{{ mostrar }}</p>
+    <ng-template #siesflaso>
+        <p>no hay nada que mostrar</p>
+    </ng-template>
+</div>
+
+<hr>
+<div>
+    <h2>NGFOR</h2>
+    <div>
+        <input [(ngModel)]="nombreIn">
+
+        <input [(ngModel)]="apellidoIn">
+        <button class="btn btn-danger" (click)="agregarListaPersona()">agregar</button>
+    </div>
+
+    <div *ngFor='let per of personas; let i = index'>
+        <ul>
+            <li>{{ i }} nombre {{ per.nombre }} apelido {{ per.apellido}}</li>
+        </ul>
+    </div>
+</div>
+<hr>
